@@ -1,0 +1,70 @@
+/* Card Search Styles */
+
+.cardSearch{
+    margin-top:20px;
+}
+.cardImageContainer{
+    border-style: solid;
+    border-color:#5f5f5f;
+    border-radius: 1vmax;
+    border-width:1px;
+    padding:0vmax;
+    box-shadow: 2px 2px 2px;
+}
+.cardSearchImage{
+    width:100%
+}
+  
+.cardContainer{
+    margin-top:2vmax;
+}
+  
+.cardInformation{
+    background-color:#f9f9f9;
+    border-radius: 0.5vmax;
+    border-top: solid #424242;
+    border-bottom: solid #424242;
+    border-left: solid #7e7e7e;
+    border-right: solid #7e7e7e;
+    border-width:1px;
+    margin-bottom:0;
+    margin-left:2vmax;
+    text-align: left;
+ }
+  
+.cardName{
+    margin-top:1vmax;
+    margin-bottom:1vmax;
+}
+  
+.cardType{
+    margin-top:1vmax;
+    margin-bottom:1vmax;
+}
+
+
+
+
+
+
+
+
+  @media only screen and (max-width: 600px){
+    .cardName{
+      font-size: 2.25rem;
+      margin-top:1vmax;
+      margin-bottom:1vmax;
+    }
+    
+    .cardType{
+      font-size: 1.75rem;
+      margin-top:1vmax;
+      margin-bottom:1vmax;
+    }
+    .cardInformation{
+        margin-top:2vmax;
+        margin-left:0;
+        margin-right:0;
+    }
+
+  }

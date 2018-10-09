@@ -1,26 +1,37 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import CardSearch from './pages/card-search'
+import { Grid } from 'react-bootstrap';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      cardSearchState: {
+        inputValue: '',
+        cardName: '',
+        cardType: '',
+        cardImageUrl: '',
+      },
+      setSearchState: {},
+    };
+
+  }
+
+
+
+
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <h1 style={{ marginTop: '10px' }}>Ultimate MTG App</h1>
         </header>
-      </div>
+        <Grid className="cardSearch">
+          <CardSearch />
+        </Grid>
+      </div >
     );
   }
 }
