@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3000/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <link rel="shortcut icon" href="http://localhost:3000/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+  <link rel="manifest" href="http://localhost:3000/manifest.json">
+  <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="./React App_files/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="./React App_files/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <title>React App</title>
+<style type="text/css">body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+</style><style type="text/css">/* Card Search Styles */
+
+.cardSearch{
+    margin-top:20px;
+}
+.cardImageContainer{
+    border-style: solid;
+    border-color:#5f5f5f;
+    border-radius: 1vmax;
+    border-width:1px;
+    padding:0vmax;
+    box-shadow: 2px 2px 2px;
+}
+.cardSearchImage{
+    width:100%
+}
+  
+.cardContainer{
+    margin-top:2vmax;
+}
+  
+.cardInformation{
+    background-color:#f9f9f9;
+    padding:0;
+    margin-bottom:0px;
+    margin-left:2vmax;
+    text-align: left;
+ }
+  
+.cardName{
+    margin-top:1vmax;
+    margin-bottom:1vmax;
+}
+  
+.cardType{
+    vertical-align: center;
+    margin-top:1vmax;
+    margin-bottom:1vmax;
+}
+
+.panel{
+    margin-bottom: 0;
+    background-color:#f9f9f9;
+}
+
+.panel-heading{
+    background-color: #1b2b34;
+}
+
+
+  @media only screen and (max-width: 600px){
+    .cardName{
+      font-size: 2.25rem;
+      margin-top:1vmax;
+      margin-bottom:1vmax;
+    }
+    
+    .cardType{
+      font-size: 1.75rem;
+      margin-top:1vmax;
+
+    }
+    .cardInformation{
+        margin-top:2vmax;
+        margin-left:0;
+        margin-right:0;
+    }
+
+  }</style><style type="text/css">body{
+  background-color: #f9f9f9
+}
+
+.App {
+  text-align: center;
+  
+}
+
+.App-logo {
+  -webkit-animation: App-logo-spin infinite 20s linear;
+          animation: App-logo-spin infinite 20s linear;
+  height: 5vmin;
+}
+
+.App-header {
+  background-color: #1b2b34;
+  padding-left: 1vmax;
+  min-height: 8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@-webkit-keyframes App-logo-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+</style></head>
+
+<body>
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
+  <div id="root"><div class="App"><header class="App-header"><h1 style="margin-top: 10px;">Ultimate MTG App</h1></header><div class="cardSearch container"><div><div class="well"><div class="row"><div class="col-md-12"><span class="input-group"><input type="text" class="form-control"><span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span></span></div></div><div class="cardContainer row"><div class="col-md-12"><div class="cardImageContainer col-md-4"><img class="cardSearchImage" src="./React App_files/ima-10-austere-command.png" alt="card"></div><div class="cardInformation col-md-7"><div class="panel panel-default"><div role="tab" id="1--heading" class="panel-heading" style="
+    background-color: red;
+"><div class="panel-title"><a aria-expanded="false" class="collapsed" aria-controls="1--body" role="button" href="http://localhost:3000/#"><h2 class="cardName">This is the card name</h2></a></div></div><div class="panel-collapse collapse" id="1--body" role="tabpanel" aria-labelledby="1--heading" aria-expanded="false"><div class="panel-body"><h3 class="cardType">Type of Card</h3></div></div></div></div></div></div></div></div></div></div></div>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+<script src="./React App_files/bundle.js.download"></script><script src="./React App_files/0.chunk.js.download"></script><script src="./React App_files/main.chunk.js.download"></script><script src="./React App_files/main.51558bb2ad449b878079.hot-update.js.download"></script>
+
+</body></html>

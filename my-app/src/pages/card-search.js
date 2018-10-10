@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, FormControl, InputGroup, Col, Well } from 'react-bootstrap';
+import { Row, FormControl, InputGroup, Col, Well, Panel, PanelGroup } from 'react-bootstrap';
 import './styles.css'
 
 function CardSearchInputs(props) {
@@ -26,12 +26,24 @@ function CardSearch(props) {
                     <Col md={12}>
                         {/* Card Image */}
                         <Col md={4} className="cardImageContainer">
-                            <img className="cardSearchImage" src="https://img.scryfall.com/cards/png/en/ima/10.png?1530591620" alt="card" />
+                            <img className="cardSearchImage" src={props.cardData.cardImageUrl} alt="card" />
                         </Col>
                         {/* Card Information */}
                         <Col md={7} className="cardInformation">
-                            <h2 className="cardName">This is the card name</h2>
-                            <h3 className="cardType">Type of Card</h3>
+                            <PanelGroup accordion id="accordion-uncontrolled-example" defaultActiveKey="1">
+                                <Panel eventKey="1" >
+                                    <Panel.Heading>
+                                        <Panel.Title toggle><h3 className="cardName">{props.cardData.cardName}</h3></Panel.Title>
+                                    </Panel.Heading>
+                                    <Panel.Body collapsible><h4 className="cardType">{props.cardData.cardType}</h4></Panel.Body>
+                                </Panel>
+                                <Panel eventKey="2">
+                                    <Panel.Heading>
+                                        <Panel.Title toggle><h3 className="cardName">Legality</h3></Panel.Title>
+                                    </Panel.Heading>
+                                    <Panel.Body collapsible>Panel content 1</Panel.Body>
+                                </Panel>
+                            </PanelGroup>
                         </Col>
                     </Col>
                 </Row>

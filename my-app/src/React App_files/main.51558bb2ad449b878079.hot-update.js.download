@@ -1,0 +1,23 @@
+webpackHotUpdate("main",{
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/pages/styles.css":
+/*!*********************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-oneOf-3-1!./node_modules/postcss-loader/src??postcss!./src/pages/styles.css ***!
+  \*********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "/* Card Search Styles */\r\n\r\n.cardSearch{\r\n    margin-top:20px;\r\n}\r\n.cardImageContainer{\r\n    border-style: solid;\r\n    border-color:#5f5f5f;\r\n    border-radius: 1vmax;\r\n    border-width:1px;\r\n    padding:0vmax;\r\n    box-shadow: 2px 2px 2px;\r\n}\r\n.cardSearchImage{\r\n    width:100%\r\n}\r\n  \r\n.cardContainer{\r\n    margin-top:2vmax;\r\n}\r\n  \r\n.cardInformation{\r\n    background-color:#f9f9f9;\r\n    padding:0;\r\n    margin-bottom:0px;\r\n    margin-left:2vmax;\r\n    text-align: left;\r\n }\r\n  \r\n.cardName{\r\n    margin-top:1vmax;\r\n    margin-bottom:1vmax;\r\n}\r\n  \r\n.cardType{\r\n    vertical-align: center;\r\n    margin-top:1vmax;\r\n    margin-bottom:1vmax;\r\n}\r\n\r\n.panel{\r\n    margin-bottom: 0;\r\n    background-color:#f9f9f9;\r\n}\r\n\r\n.panel-heading{\r\n    background-color: #1b2b34;\r\n}\r\n\r\n\r\n  @media only screen and (max-width: 600px){\r\n    .cardName{\r\n      font-size: 2.25rem;\r\n      margin-top:1vmax;\r\n      margin-bottom:1vmax;\r\n    }\r\n    \r\n    .cardType{\r\n      font-size: 1.75rem;\r\n      margin-top:1vmax;\r\n\r\n    }\r\n    .cardInformation{\r\n        margin-top:2vmax;\r\n        margin-left:0;\r\n        margin-right:0;\r\n    }\r\n\r\n  }", ""]);
+
+// exports
+
+
+/***/ })
+
+})
+//# sourceMappingURL=main.51558bb2ad449b878079.hot-update.js.map

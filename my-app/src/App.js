@@ -9,9 +9,9 @@ class App extends Component {
     this.state = {
       cardSearchState: {
         inputValue: '',
-        cardName: '',
-        cardType: '',
-        cardImageUrl: '',
+        cardName: 'Arcane Flight',
+        cardType: 'Sorcery',
+        cardImageUrl: 'https://img.scryfall.com/cards/png/en/ima/10.png?1530591620',
       },
       setSearchState: {},
     };
@@ -29,7 +29,7 @@ class App extends Component {
           <h1 style={{ marginTop: '10px' }}>Ultimate MTG App</h1>
         </header>
         <Grid className="cardSearch">
-          <CardSearch />
+          <CardSearch cardData={this.state.cardSearchState} />
         </Grid>
       </div >
     );
