@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, FormControl, InputGroup, Col, Well, Panel, PanelGroup } from 'react-bootstrap';
+import { Row, FormControl, InputGroup, Col, Well, Panel, PanelGroup, Table } from 'react-bootstrap';
 import './styles.css'
 
 function CardSearchInputs(props) {
@@ -35,13 +35,38 @@ function CardSearch(props) {
                                     <Panel.Heading>
                                         <Panel.Title toggle><h3 className="cardName">{props.cardData.cardName}</h3></Panel.Title>
                                     </Panel.Heading>
-                                    <Panel.Body collapsible><h4 className="cardType">{props.cardData.cardType}</h4></Panel.Body>
+                                    <Panel.Body collapsible>
+                                        <h4 className="cardType">{props.cardData.cardType}</h4>
+
+                                    </Panel.Body>
                                 </Panel>
                                 <Panel eventKey="2">
                                     <Panel.Heading>
                                         <Panel.Title toggle><h3 className="cardName">Legality</h3></Panel.Title>
                                     </Panel.Heading>
-                                    <Panel.Body collapsible>Panel content 1</Panel.Body>
+                                    <Panel.Body collapsible>
+                                        <Table condensed hover>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Mark</td>
+                                                    <td>Otto</td>
+                                                    <td>@mdo</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>Jacob</td>
+                                                    <td>Thornton</td>
+                                                    <td>@fat</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td colSpan="2">Larry the Bird</td>
+                                                    <td>@twitter</td>
+                                                </tr>
+                                            </tbody>
+                                        </Table>
+                                    </Panel.Body>
                                 </Panel>
                             </PanelGroup>
                         </Col>
