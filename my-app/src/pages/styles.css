@@ -16,12 +16,12 @@
 }
   
 .cardContainer{
-    margin-top:2vmax;
+    margin-top:0
 }
   
 .cardInformation{
+    padding-right:0;
     margin-bottom:0px;
-    margin-left:2vmax;
     text-align: left;
  }
 
@@ -43,8 +43,19 @@
     margin-bottom:0;
 }
 
+.illegal{
+    background-color:#f9f9f9
+}
+
+.legal{
+    background-color: #5cb85c
+}
+.legalTable{
+    text-align: center;
+}
+
 .panel{
-    margin-bottom: 0;
+    margin-bottom: 1vmax;
 }
 
 .panel-group{
@@ -55,6 +66,12 @@
     padding:0;
 }
 
+.searchButton{
+    margin:0;
+    padding:0;
+    height:100%;
+    width:100%
+}
 
   @media only screen and (max-width: 600px){
     .cardName{
