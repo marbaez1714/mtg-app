@@ -73,6 +73,10 @@
     width:100%
 }
 
+.searchInput{
+    width:75%
+}
+
   @media only screen and (max-width: 600px){
     .cardName{
       font-size: 2.25rem;

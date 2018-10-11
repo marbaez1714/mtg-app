@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Row, FormControl, InputGroup, Col, Well, Panel, PanelGroup, Table } from 'react-bootstrap';
+import { Button, Row, FormControl, Form, Col, Well, Panel, PanelGroup, Table, FormGroup } from 'react-bootstrap';
 import './styles.css'
 
 function getLegal(value) {
@@ -10,18 +10,15 @@ function getLegal(value) {
     }
 }
 
-
-
-
 function CardSearchInputs(props) {
     return (
         <Col md={12}>
-            {/* Input Group */}
-            <InputGroup >
-                <FormControl type="text" onChange={props.inputChange} value={props.cardSearchState.inputValue} />
-                <InputGroup.Addon><span className="glyphicon glyphicon-search"></span></InputGroup.Addon>
-            </InputGroup>
-            <p>{props.cardSearchState.inputValue}</p>
+            <Form onSubmit={props.cardSearch}>
+                {/* Input Group */}
+                <FormGroup >
+                    <FormControl type="text" onChange={props.inputChange} value={props.cardSearchState.inputValue} />
+                </FormGroup>
+            </Form>
         </Col>
     )
 }
@@ -116,7 +113,7 @@ function CardSearch(props) {
         <div>
             <Well>
                 <Row>
-                    <CardSearchInputs inputChange={props.changeValue} cardSearchState={props.cardData} />
+                    <CardSearchInputs inputChange={props.changeValue} cardSearchState={props.cardData} cardSearch={props.cardSearch} />
                 </Row >
                 <Row className="cardContainer">
                     <Col md={12}>
