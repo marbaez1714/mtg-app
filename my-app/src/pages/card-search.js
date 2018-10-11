@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Row, FormControl, Form, Col, Well, Panel, PanelGroup, Table, FormGroup } from 'react-bootstrap';
+import { Row, FormControl, Form, Col, Well, Panel, PanelGroup, Table, FormGroup, ListGroup, ListGroupItem } from 'react-bootstrap';
 import './styles.css'
 
 function getLegal(value) {
@@ -12,10 +12,10 @@ function getLegal(value) {
 
 function CardSearchInputs(props) {
     return (
-        <Col md={12}>
+        <Col md={12} style={{ paddingLeft: "5vmax", paddingRight: "5vmax" }}>
             <Form onSubmit={props.cardSearch}>
                 {/* Input Group */}
-                <FormGroup >
+                <FormGroup bsSize="large">
                     <FormControl type="text" onChange={props.inputChange} value={props.cardSearchState.inputValue} />
                 </FormGroup>
             </Form>
@@ -30,7 +30,10 @@ function CardInfo(props) {
                 <Panel.Title toggle><h3 className="cardName">{props.cardData.cardName}</h3></Panel.Title>
             </Panel.Heading>
             <Panel.Body collapsible>
-                <h4 className="cardType">{props.cardData.cardType}</h4>
+                <ListGroup>
+                    <ListGroupItem><h4 className="cardType">{props.cardData.cardType}</h4></ListGroupItem>
+                    <ListGroupItem><h4 className="cardType">{props.cardData.cardUsd}</h4></ListGroupItem>
+                </ListGroup>
 
             </Panel.Body>
         </Panel>
@@ -48,27 +51,27 @@ function CardLegal(props) {
                     <Table condensed hover bordered>
                         <tbody>
                             <tr>
-                                {getLegal('legal')}
+                                {getLegal(props.legalData.standard)}
                                 <td>Standard</td>
 
                             </tr>
                             <tr>
-                                {getLegal('not_legal')}
+                                {getLegal(props.legalData.modern)}
                                 <td>Modern</td>
 
                             </tr>
                             <tr>
-                                {getLegal('legal')}
+                                {getLegal(props.legalData.legacy)}
                                 <td>Legacy</td>
 
                             </tr>
                             <tr>
-                                {getLegal('legal')}
+                                {getLegal(props.legalData.vintage)}
                                 <td>Vintage</td>
 
                             </tr>
                             <tr>
-                                {getLegal('legal')}
+                                {getLegal(props.legalData.commander)}
                                 <td>Commander</td>
 
                             </tr>
@@ -80,23 +83,23 @@ function CardLegal(props) {
                     <Table condensed hover bordered>
                         <tbody>
                             <tr>
-                                {getLegal('legal')}
+                                {getLegal(props.legalData.frontier)}
                                 <td>Frontier</td>
                             </tr>
                             <tr>
-                                {getLegal('not_legal')}
+                                {getLegal(props.legalData.pauper)}
                                 <td>Pauper</td>
                             </tr>
                             <tr>
-                                {getLegal('legal')}
+                                {getLegal(props.legalData.penny)}
                                 <td>Penny</td>
                             </tr>
                             <tr>
-                                {getLegal('not_legal')}
+                                {getLegal(props.legalData["1v1"])}
                                 <td>1v1 Cmdr.</td>
                             </tr>
                             <tr>
-                                {getLegal('legal')}
+                                {getLegal(props.legalData.brawl)}
                                 <td>Brawl</td>
                             </tr>
                         </tbody>
@@ -119,13 +122,13 @@ function CardSearch(props) {
                     <Col md={12}>
                         {/* Card Image */}
                         <Col md={4} className="cardImageContainer">
-                            <img className="cardSearchImage" src={props.cardData.cardImageUrl} alt="card" />
+                            <img className="cardSearchImage" src={props.cardData.cardImageUrl} alt="card" sytle={{ display: "none" }} />
                         </Col>
                         {/* Card Information */}
                         <Col md={8} className="cardInformation">
                             <PanelGroup accordion id="accordion-uncontrolled-example" defaultActiveKey="1">
                                 <CardInfo cardData={props.cardData} />
-                                <CardLegal />
+                                <CardLegal legalData={props.cardData.cardLegalities} />
                             </PanelGroup>
                         </Col>
                     </Col>

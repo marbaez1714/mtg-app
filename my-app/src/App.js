@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import axios from 'axios';
 import CardSearch from './pages/card-search'
 import { Grid } from 'react-bootstrap';
@@ -12,8 +13,23 @@ class App extends Component {
         inputValue: '',
         fuzzyBase: 'https://api.scryfall.com/cards/named?fuzzy=',
         cardName: 'Lets find your card!',
-        cardType: 'Sorcery',
-        cardImageUrl: 'https://img.scryfall.com/cards/png/en/ima/10.png?1530591620',
+        cardType: 'Type',
+        cardUsd: 'Price',
+        cardImageUrl: 'https://img.scryfall.com/cards/art_crop/en/dom/43.jpg?1524790424',
+        cardLegalities: {
+          "standard": ' ',
+          "future": ' ',
+          "frontier": ' ',
+          "modern": ' ',
+          "legacy": ' ',
+          "pauper": ' ',
+          "vintage": ' ',
+          "penny": ' ',
+          "commander": ' ',
+          "1v1": ' ',
+          "duel": ' ',
+          "brawl": ' '
+        }
       },
       setSearchState: {},
       test: "",
@@ -32,12 +48,26 @@ class App extends Component {
   }
 
   handleSearch(event) {
+    var self = this;
+    var cardInfo = this.state.cardSearchState;
     var inputValue = this.state.cardSearchState.inputValue;
     var cardNameString = inputValue.split(" ").join("+");
     var getUrl = this.state.cardSearchState.fuzzyBase + cardNameString;
-    this.setState({ test: getUrl })
+
+    axios.get(getUrl).then(function (response) {
+      var data = response.data;
+      cardInfo.cardName = data.name;
+      cardInfo.cardType = data.type_line;
+      cardInfo.cardImageUrl = data.image_uris.png;
+      cardInfo.cardUsd = '$ ' + data.usd;
+      cardInfo.cardLegalities = data.legalities
+      self.setState({ cardSearchState: cardInfo })
+      console.log(response.data);
+    }).catch(function (error) {
+      console.log("Opps! Something went wront!: ", error);
+    });
     event.preventDefault();
-    event.stopPropagation();
+
   }
 
 
@@ -50,7 +80,7 @@ class App extends Component {
           <h1 style={{ marginTop: '10px' }}>Ultimate MTG App</h1>
         </header>
         <Grid className="cardSearch">
-          <CardSearch cardData={this.state.cardSearchState} changeValue={this.handleSearchChange} cardSearch={this.handleSearch} test={this.state.test} />
+          <CardSearch cardData={this.state.cardSearchState} changeValue={this.handleSearchChange} cardSearch={this.handleSearch} />
         </Grid>
       </div >
     );
